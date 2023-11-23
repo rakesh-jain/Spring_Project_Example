@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="pgaddress1" class="com.spring.pgdata.PgAddress">
+        <constructor-arg name="zipcode" value="577233"></constructor-arg>
+        <constructor-arg name="street" value="33rd cross Ashirwad Apartment"></constructor-arg>
+        <constructor-arg name="city" value="btm layout banglore"></constructor-arg>
+        <constructor-arg name="state" value="karnataka"></constructor-arg>
+        <constructor-arg name="country" value="India"></constructor-arg>
+    </bean>
+
+    <bean id="Resident1" class="com.spring.pgdata.Resident">
+        <constructor-arg name="resnum" value="11" type="int"></constructor-arg>
+        <constructor-arg name="roomnum" value="101" type="int"></constructor-arg>
+        <constructor-arg name="name" value="Shridhara"></constructor-arg>
+        <constructor-arg name="occupation" value="Student"></constructor-arg>
+        <constructor-arg name="adharnum" value="444901152350" type="long"></constructor-arg>
+        <constructor-arg name="num" value="9686633598" type="long"></constructor-arg>
+    </bean>
+
+    <bean id="RAddress1" class="com.spring.pgdata.RAddress">
+        <constructor-arg name="zipcode" value="577233"></constructor-arg>
+        <constructor-arg name="street" value="3rd cross nindha apartment"></constructor-arg>
+        <constructor-arg name="city" value="Bhadravathi"></constructor-arg>
+        <constructor-arg name="state" value="karnataka"></constructor-arg>
+        <constructor-arg name="country" value="India"></constructor-arg>
+    </bean>
+
+
+    <bean id="pgdata1" class="com.spring.pgdata.PgData">
+       <constructor-arg name="pgid" value="101"></constructor-arg>
+        <constructor-arg name="pgname" value="varnagokula"></constructor-arg>
+        <constructor-arg name="address">
+            <ref bean="pgaddress1"></ref>
+        </constructor-arg>
+        <constructor-arg>
+            <map>
+                <entry key-ref="Resident1" value-ref="RAddress1"></entry>
+
+            </map>
+        </constructor-arg>
+    </bean>
+</beans>
